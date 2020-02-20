@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,122 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ControllersUnderControll" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="yXH-ge-hYH">
+                                <rect key="frame" x="99" y="327" width="216" height="252"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKQ-j8-X01">
+                                        <rect key="frame" x="0.0" y="0.0" width="216" height="39"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="Segue"/>
+                                        <connections>
+                                            <action selector="sequeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5my-9e-zbI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5p9-AG-gUY">
+                                        <rect key="frame" x="0.0" y="71" width="216" height="39"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="Navigation PushVC"/>
+                                        <connections>
+                                            <action selector="navigationControllerTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kv2-Qy-F1i"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Cg-ph-SxN">
+                                        <rect key="frame" x="0.0" y="142" width="216" height="39"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="Navigation Present NC"/>
+                                        <connections>
+                                            <action selector="presentNavigationController:" destination="BYZ-38-t0r" eventType="touchUpInside" id="82d-Dd-94C"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CaT-l2-Dbf">
+                                        <rect key="frame" x="0.0" y="213" width="216" height="39"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="Navigation Present VC"/>
+                                        <connections>
+                                            <action selector="presentViewController:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NYl-vd-mOY"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="yXH-ge-hYH" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="IXs-yi-Kb8"/>
+                            <constraint firstItem="yXH-ge-hYH" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="POZ-3d-1Dj"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <segue destination="yh1-hn-Wx2" kind="show" identifier="detail" id="imX-0f-LGv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="139" y="139"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="0zj-MB-1cG">
+            <objects>
+                <viewController id="yh1-hn-Wx2" customClass="DetailViewController" customModule="ControllersUnderControll" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mIm-AC-gaB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="Qbl-Es-A4g">
+                                <rect key="frame" x="99" y="278" width="216" height="252"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K0t-qB-X1V">
+                                        <rect key="frame" x="0.0" y="0.0" width="216" height="39"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="Segue"/>
+                                        <connections>
+                                            <action selector="sequeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tKG-My-6RD"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JA2-1J-hYU">
+                                        <rect key="frame" x="0.0" y="71" width="216" height="39"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="Navigation PushVC"/>
+                                        <connections>
+                                            <action selector="navigationControllerTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oGL-3g-cNi"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IPf-Vs-swR">
+                                        <rect key="frame" x="0.0" y="142" width="216" height="39"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="Navigation Present NC"/>
+                                        <connections>
+                                            <action selector="presentNavigationController:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uGc-vv-Zb3"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ar2-T5-vr0">
+                                        <rect key="frame" x="0.0" y="213" width="216" height="39"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="Navigation Present VC"/>
+                                        <connections>
+                                            <action selector="presentViewController:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rHS-kR-gtm"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Qbl-Es-A4g" firstAttribute="centerY" secondItem="ewE-JT-pVA" secondAttribute="centerY" id="duR-1p-kjw"/>
+                            <constraint firstItem="Qbl-Es-A4g" firstAttribute="centerX" secondItem="ewE-JT-pVA" secondAttribute="centerX" id="qwe-Fp-OPP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ewE-JT-pVA"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="pfW-D6-IFC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u4H-vx-ehW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1183" y="139"/>
         </scene>
     </scenes>
 </document>

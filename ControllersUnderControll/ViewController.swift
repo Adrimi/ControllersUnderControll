@@ -9,12 +9,32 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    
+    @IBAction func sequeTapped(_ sender: UIButton) {
+        performSegue(withIdentifier: "detail", sender: nil)
     }
-
+    
+    @IBAction func navigationControllerTapped(_ sender: UIButton) {
+        let vc = DetailViewController.init()
+        
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func presentNavigationController(_ sender: UIButton) {
+        let vc = DetailViewController.init()
+        
+        let nc = UINavigationController.init(rootViewController: vc)
+        nc.modalPresentationStyle = .fullScreen
+        
+        present(nc, animated: true)
+    }
+    
+    @IBAction func presentViewController(_ sender: UIButton) {
+        let vc = DetailViewController.init()
+        vc.modalPresentationStyle = .automatic
+        
+        present(vc, animated: true)
+    }
 
 }
 
